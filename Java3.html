@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单网页案例</title>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color:lightcyan;
+        }
+        .content, .footer {
+            background:lightblue;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>欢迎来到我的网页！</h1>
+    </header>
+    <div class="content">
+        <p>今日幸运数：</p>
+    </div>
+    <div class="footer">
+        <p>总耗时：</p>
+    </div>
+
+    <script>
+        document.body.style.height = (window.innerHeight - 20) + 'px';
+        let randNumber = Math.floor(Math.random() * 100);
+        let contentDiv = document.querySelector('.content');
+        contentDiv.textContent = '今日幸运数：' + randNumber;
+        console.log(randNumber);
+        let initialTime = new Date();
+        console.log("页面渲染时间: " + (new Date() - initialTime) + " ms!");
+        let startTime = new Date();
+        for (let i = 1; i <= 1e7; i++) {
+        }
+        console.log("计算1亿次循环所需时间：" + (new Date() - startTime) + " ms!");
+        let footerDiv = document.querySelector('.footer');
+        footerDiv.textContent = '总耗时：' + (new Date() - initialTime) + ' ms';
+    </script>
+</body>
+</html>
